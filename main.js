@@ -112,7 +112,7 @@ function evaluateJsInAppContext(manifestUrl, js) {
 }
 
 function idToManifest(id) {
-  return `app://${id}/manifest.webapp`
+  return id.indexOf('://') > -1 ? id : `app://${id}/manifest.webapp`
 }
 
 if(module.parent) {
